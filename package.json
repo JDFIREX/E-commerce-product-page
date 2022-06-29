@@ -1,0 +1,19 @@
+{
+  "name": "e-commerce-product-page",
+  "version": "1.0.0",
+  "description": "frontend mentor project - e commerce product page",
+  "main": "src/index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JDFIREX/E-commerce-product-page.git"
+  },
+  "author": "https://github.com/JDFIREX",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JDFIREX/E-commerce-product-page/issues"
+  },
+  "homepage": "https://github.com/JDFIREX/E-commerce-product-page#readme"
+}
