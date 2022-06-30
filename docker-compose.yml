@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  e-commerce-product-page:
+    container_name: e-commerce-product-page
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+      POSTGRES_USER: JDFIREX
+      POSTGRES_PASSWORD: JDFIREX
+      POSTGRES_DB: e-commerce-product-page
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:
+    name: e-commerce-product-page-db
