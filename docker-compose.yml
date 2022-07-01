@@ -16,10 +16,31 @@ services:
     env_file:
       - .env
 
+  prisma:
+    image: prismagraphql/prisma:1.34
+    restart: always
+    ports:
+      - "4466:4466"
+    environment:
+      PRISMA_CONFIG: |
+        port: 4466
+        managementApiSecret: mysecret42
+        databases:
+          default:
+            connector: postgres
+            host: postgres
+            port: 5432
+            user: JDFIREX
+            password: JDFIREX
+
   postgres:
     image: postgres:13
     container_name: postgres
     restart: always
+    environment:
+      POSTGRES_USER: JDFIREX
+      POSTGRES_PASSWORD: JDFIREX
+      POSTGRES_DB: e-commerce-product-page
     ports:
       - 5432:5432
     env_file:
@@ -28,4 +49,4 @@ services:
       - postgres:/var/lib/postgresql/data
 volumes:
   postgres:
-    name: e-commerce-product-page-db
+    name: e-commerce-product-page
