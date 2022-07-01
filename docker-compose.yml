@@ -7,10 +7,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
-    environment:
-      POSTGRES_USER: JDFIREX
-      POSTGRES_PASSWORD: JDFIREX
-      POSTGRES_DB: e-commerce-product-page
     depends_on:
       - postgres
     env_file:
@@ -37,10 +33,6 @@ services:
     image: postgres:13
     container_name: postgres
     restart: always
-    environment:
-      POSTGRES_USER: JDFIREX
-      POSTGRES_PASSWORD: JDFIREX
-      POSTGRES_DB: e-commerce-product-page
     ports:
       - 5432:5432
     env_file:
@@ -48,5 +40,4 @@ services:
     volumes:
       - postgres:/var/lib/postgresql/data
 volumes:
-  postgres:
-    name: e-commerce-product-page
+  postgres: ~
