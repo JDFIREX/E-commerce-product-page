@@ -11,8 +11,44 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  email     String   @unique
-  name      String?
+  id     Int     @id @default(autoincrement())
+  email  String  @unique
+  name   String
+  orders Order[]
+}
+
+model Order {
+  id            Int               @id @default(autoincrement())
+  author        User              @relation(fields: [authorId], references: [id])
+  authorId      Int
+  products      Product_ordered[]
+  order_created DateTime          @default(now())
+  status        OrderStatus       @default(WAIT)
+}
+
+enum OrderStatus {
+  WAIT
+  ACCEPT
+  SEND
+}
+
+model Product_ordered {
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  orderId   Int
+
+  @@id([productId, orderId])
+}
+
+model Product {
+  id               Int               @id @default(autoincrement())
+  title            String
+  description      String
+  product_create   DateTime
+  discount         Boolean           @default(false)
+  discount_procent Int               @default(0)
+  price            Int
+  avaible          Int
+  Product_ordered  Product_ordered[]
 }
