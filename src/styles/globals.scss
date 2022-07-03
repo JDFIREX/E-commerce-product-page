@@ -5,9 +5,24 @@
   font-size: 16px;
   font-family: "Kumbh Sans", sans-serif;
   font-weight: 400;
+  color: $black;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-html,
+html {
+  display: flex;
+  justify-content: center;
+}
+
 body {
+  position: relative;
   background-color: $white;
+  width: $desktop;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
 }
