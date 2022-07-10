@@ -1,0 +1,13 @@
+@import "/src/styles/variables.module";
+
+.name {
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: $dark-blue;
+  line-height: 1rem;
+
+  &:hover {
+    color: $black;
+  }
+}

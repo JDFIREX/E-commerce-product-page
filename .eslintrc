@@ -32,6 +32,7 @@
     "node": true
   },
   "rules": {
+    "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-shadow": "error",
     "prefer-const": "warn",
     "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
