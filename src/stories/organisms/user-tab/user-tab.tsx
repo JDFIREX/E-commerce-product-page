@@ -1,12 +1,12 @@
 import React from "react";
 
-import UserNotifications from "../../molecules/user-notifications/user-notifications";
+import UserCart from "../../molecules/user-cart/user-cart";
 import UserProfile from "../../molecules/user-profile/user-profile";
 
 const UserTab = (): JSX.Element => {
   return (
     <div>
-      <UserNotifications />
+      <UserCart />
       <UserProfile />
     </div>
   );
