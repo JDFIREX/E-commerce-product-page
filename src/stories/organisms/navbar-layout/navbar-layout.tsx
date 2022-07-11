@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import PageLogo from "../../atoms/page-logo/page-logo";
-import Tabs from "../../molecules/tabs/tabs";
+import Links from "../../molecules/links/links";
 import UserTab from "../user-tab/user-tab";
 
 import styles from "./navbar-layout.module.scss";
@@ -21,7 +21,7 @@ const NavbarLayout = (props: NavbarLayoutProps): JSX.Element => {
             <PageLogo />
           </Link>
         </div>
-        <Tabs />
+        <Links />
         <UserTab />
       </div>
 
