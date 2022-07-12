@@ -1,21 +1,24 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import CartIcon from "../../atoms/cart-icon/cart-icon";
 import MenuWrapper from "../../atoms/menu-wrapper/menu-wrapper";
 
+import styles from "./user-cart.module.scss";
+
 const UserCart = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const cartIconRef = useRef<HTMLDivElement>(null);
 
   const toggleMenuOpen = (): void => {
     setMenuOpen((prevState) => !prevState);
   };
 
   return (
-    <div>
-      <CartIcon toggleCartMenu={toggleMenuOpen} ref={cartIconRef} />
-      <MenuWrapper isOpen={menuOpen} toggleMenuOpen={toggleMenuOpen}>
-        <p>menu cart</p>
+    <div className={styles.cart}>
+      <CartIcon toggleCartMenu={toggleMenuOpen} aria-selected={menuOpen} />
+      <MenuWrapper isOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} className={styles.menu}>
+        <li>
+          <p>menu cart</p>
+        </li>
       </MenuWrapper>
     </div>
   );

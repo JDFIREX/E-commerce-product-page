@@ -1,18 +1,20 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import classNames from "classnames";
 
 import styles from "./menu-wrapper.module.scss";
 
-interface MenuWrapperProps {
+interface MenuWrapperProps
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
   children: React.ReactNode;
   isOpen: boolean;
   toggleMenuOpen: () => void;
 }
 
 const MenuWrapper = (props: MenuWrapperProps): JSX.Element | null => {
-  const { isOpen, children, toggleMenuOpen } = props;
+  const { isOpen, children, toggleMenuOpen, className, ...rest } = props;
 
   const [toggleMenuAvailable, setToggleMenuAvailable] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLUListElement>(null);
 
   const toggleMenu = useCallback(
     ({ target }: MouseEvent) => {
@@ -41,9 +43,16 @@ const MenuWrapper = (props: MenuWrapperProps): JSX.Element | null => {
   }
 
   return (
-    <div className={styles.menu} ref={menuRef}>
+    <ul
+      className={classNames({
+        [styles.menu]: true,
+        className
+      })}
+      ref={menuRef}
+      {...rest}
+    >
       {children}
-    </div>
+    </ul>
   );
 };
 
