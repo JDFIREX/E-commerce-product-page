@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import styles from "./menu-wrapper.module.scss";
 
@@ -6,32 +6,29 @@ interface MenuWrapperProps {
   children: React.ReactNode;
   isOpen: boolean;
   toggleMenuOpen: () => void;
-  anchorEl: React.RefObject<HTMLDivElement>;
 }
 
 const MenuWrapper = (props: MenuWrapperProps): JSX.Element | null => {
-  const { isOpen, children, toggleMenuOpen, anchorEl } = props;
+  const { isOpen, children, toggleMenuOpen } = props;
 
+  const [toggleMenuAvailable, setToggleMenuAvailable] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = useCallback(
-    (e: MouseEvent) => {
-      console.log(menuRef, e.target, anchorEl.current);
-      if (
-        menuRef.current &&
-        anchorEl.current &&
-        e.target &&
-        (!menuRef.current.contains(e.target) || e.target !== anchorEl.current)
-      ) {
+    ({ target }: MouseEvent) => {
+      if (menuRef.current && toggleMenuAvailable && !menuRef.current.contains(target as Node)) {
         toggleMenuOpen();
       }
     },
-    [anchorEl, toggleMenuOpen]
+    [toggleMenuAvailable, toggleMenuOpen]
   );
 
   useEffect(() => {
-    if (isOpen) {
+    setToggleMenuAvailable(false);
+
+    if (isOpen && menuRef.current) {
       window.addEventListener("click", toggleMenu);
+      setToggleMenuAvailable(true);
     }
 
     return () => {

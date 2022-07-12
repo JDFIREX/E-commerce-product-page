@@ -14,7 +14,7 @@ const UserCart = (): JSX.Element => {
   return (
     <div>
       <CartIcon toggleCartMenu={toggleMenuOpen} ref={cartIconRef} />
-      <MenuWrapper isOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} anchorEl={cartIconRef}>
+      <MenuWrapper isOpen={menuOpen} toggleMenuOpen={toggleMenuOpen}>
         <p>menu cart</p>
       </MenuWrapper>
     </div>
