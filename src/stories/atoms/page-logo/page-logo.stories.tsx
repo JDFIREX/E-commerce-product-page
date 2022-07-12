@@ -6,7 +6,7 @@ import PageLogo from "./page-logo";
 
 export default {
   title: "Atoms/pageLogo",
-  component: PageLogo,
+  component: PageLogo
 };
 
 const Template: ComponentStory<typeof PageLogo> = () => <PageLogo />;

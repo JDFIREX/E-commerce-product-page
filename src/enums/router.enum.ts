@@ -3,7 +3,7 @@ export enum RouterEnum {
   MEN = "men",
   WOMEN = "women",
   ABOUT = "about",
-  CONTACT = "contact",
+  CONTACT = "contact"
 }
 
 export namespace RouterEnumHelper {
