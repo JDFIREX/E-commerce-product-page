@@ -1,4 +1,8 @@
 .user_tab {
   position: relative;
   margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.65rem;
 }

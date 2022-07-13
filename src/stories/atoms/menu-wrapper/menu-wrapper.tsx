@@ -44,10 +44,11 @@ const MenuWrapper = (props: MenuWrapperProps): JSX.Element | null => {
 
   return (
     <ul
-      className={classNames({
-        [styles.menu]: true,
-        className
-      })}
+      className={
+        classNames({
+          [styles.menu]: true
+        }) + ` ${className || ""}`
+      }
       ref={menuRef}
       {...rest}
     >
