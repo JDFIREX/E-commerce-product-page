@@ -32,6 +32,7 @@
     "node": true
   },
   "rules": {
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/comma-dangle": ["error", "never"],
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-shadow": "error",
