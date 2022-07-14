@@ -1,0 +1,10 @@
+@import "src/styles/variables.module";
+
+.menu {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0.5rem 2rem -1.5rem $black;
+  background-color: $white;
+  z-index: 2;
+  list-style-type: none;
+}

@@ -8,7 +8,7 @@ import styles from "./links.module.scss";
 const linkList: ILink[] = Object.keys(RouterEnum).map(
   (router: string): ILink => ({
     name: RouterEnumHelper.getValue(router),
-    router: router !== "COLLECTIONS" ? `/${RouterEnumHelper.getValue(router)}` : "/",
+    router: router !== "COLLECTIONS" ? `/${RouterEnumHelper.getValue(router)}` : "/"
   })
 );
 

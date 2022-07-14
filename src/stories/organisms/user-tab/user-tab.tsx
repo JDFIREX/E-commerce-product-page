@@ -1,12 +1,14 @@
 import React from "react";
 
-import UserNotifications from "../../molecules/user-notifications/user-notifications";
-import UserProfile from "../../molecules/user-profile/user-profile";
+import UserCart from "../../molecules/user/user-cart/user-cart";
+import UserProfile from "../../molecules/user/user-profile/user-profile";
+
+import styles from "./user-tab.module.scss";
 
 const UserTab = (): JSX.Element => {
   return (
-    <div>
-      <UserNotifications />
+    <div className={styles.user_tab}>
+      <UserCart />
       <UserProfile />
     </div>
   );
