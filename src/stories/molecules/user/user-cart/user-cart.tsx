@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-import CartIcon from "../../atoms/cart-icon/cart-icon";
-import MenuWrapper from "../../atoms/menu-wrapper/menu-wrapper";
+import CartIcon from "../../../atoms/cart-icon/cart-icon";
+import MenuItem from "../../../atoms/menu-item/menu-item";
+import MenuWrapper from "../../menu-wrapper/menu-wrapper";
 
 import styles from "./user-cart.module.scss";
 
@@ -16,9 +17,9 @@ const UserCart = (): JSX.Element => {
     <div className={styles.cart}>
       <CartIcon toggleCartMenu={toggleMenuOpen} aria-pressed={menuOpen} />
       <MenuWrapper isOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} className={styles.menu}>
-        <li>
+        <MenuItem>
           <p>menu cart</p>
-        </li>
+        </MenuItem>
       </MenuWrapper>
     </div>
   );

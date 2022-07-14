@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-import MenuWrapper from "../../atoms/menu-wrapper/menu-wrapper";
-import UserProfileLogo from "../../atoms/user-profile-logo/user-profile-logo";
+import MenuItem from "../../../atoms/menu-item/menu-item";
+import UserProfileLogo from "../../../atoms/user-profile-logo/user-profile-logo";
+import MenuWrapper from "../../menu-wrapper/menu-wrapper";
 
 import styles from "./user-profile.module.scss";
 
@@ -20,9 +21,9 @@ const UserProfile = (): JSX.Element => {
         toggleMenuOpen={toggleProfileMenu}
         className={styles.profile_menu}
       >
-        <li>
+        <MenuItem>
           <p>menu profile</p>
-        </li>
+        </MenuItem>
       </MenuWrapper>
     </div>
   );

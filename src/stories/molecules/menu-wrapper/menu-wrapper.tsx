@@ -3,8 +3,7 @@ import classNames from "classnames";
 
 import styles from "./menu-wrapper.module.scss";
 
-interface MenuWrapperProps
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
+interface MenuWrapperProps extends React.HTMLAttributes<HTMLUListElement> {
   children: React.ReactNode;
   isOpen: boolean;
   toggleMenuOpen: () => void;

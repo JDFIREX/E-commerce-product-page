@@ -3,11 +3,7 @@ import Image from "next/image";
 
 import styles from "./cart-icon.module.scss";
 
-interface CartIconProps
-  extends React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
+interface CartIconProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   toggleCartMenu: () => void;
 }
 

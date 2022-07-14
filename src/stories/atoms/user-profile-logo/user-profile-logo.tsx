@@ -3,11 +3,7 @@ import Image from "next/image";
 
 import styles from "./user-profile-logo.module.scss";
 
-interface UserProfileLogoProps
-  extends React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
+interface UserProfileLogoProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   toggleProfileMenu: () => void;
 }
 
