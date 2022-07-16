@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import NextLink from "next/link";
 
 import PageLogo from "../../atoms/page-logo/page-logo";
 import Links from "../../molecules/links/links";
@@ -14,19 +14,17 @@ interface NavbarLayoutProps {
 const NavbarLayout = (props: NavbarLayoutProps): JSX.Element => {
   const { children } = props;
   return (
-    <div>
-      <div className={styles.navbar}>
-        <div className={styles.logo}>
-          <Link href="/">
-            <PageLogo />
-          </Link>
-        </div>
+    <>
+      <nav className={styles.navbar}>
+        <NextLink href="/">
+          <PageLogo />
+        </NextLink>
         <Links />
         <UserTab />
-      </div>
+      </nav>
 
-      <div>{children}</div>
-    </div>
+      <main>{children}</main>
+    </>
   );
 };
 
