@@ -1,14 +1,14 @@
-/** @type {import('next').NextConfig} */
+/** @type {{rewrites(): Promise<[{destination: string, source: string}]>, reactStrictMode: boolean}} */
 const nextConfig = {
   reactStrictMode: true,
   async rewrites() {
     return [
       {
         source: "/:path*",
-        destination: "/:path*",
-      },
+        destination: "/:path*"
+      }
     ];
-  },
+  }
 };
 
 module.exports = nextConfig;
