@@ -1,7 +1,7 @@
 import React from "react";
 
 import { RouterEnum } from "../../../enums/router.enum";
-import Link, { ILink } from "../../atoms/tab/link";
+import Link, { ILink } from "../../atoms/link/link";
 
 import styles from "./links.module.scss";
 
