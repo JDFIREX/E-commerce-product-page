@@ -1,0 +1,7 @@
+.github
+.next
+.idea
+.swc
+node_modules
+coverage
+prisma
