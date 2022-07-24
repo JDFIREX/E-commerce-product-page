@@ -20,11 +20,15 @@ body {
   position: relative;
   background-color: $white;
   width: $desktop;
-  background-image: url("/design/active-states-basket-empty.jpg");
+  /*  background-image: url("/design/active-states-basket-empty.jpg");
   background-position: 0 0;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
   padding: 0 10.4rem 2.75rem 10.4rem;
+
+  main {
+    padding: 5.5rem 3rem;
+  }
 }
 
 a {
