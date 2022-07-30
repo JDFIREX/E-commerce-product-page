@@ -45,10 +45,16 @@ model Product {
   id               Int               @id @default(autoincrement())
   title            String
   description      String
-  product_create   DateTime
+  collection       Collection
+  product_created  DateTime          @default(now())
   discount         Boolean           @default(false)
   discount_procent Int               @default(0)
-  price            Int
-  avaible          Int
+  price            Float
+  available        Int
   Product_ordered  Product_ordered[]
+}
+
+enum Collection {
+  MAN
+  WOMAN
 }
