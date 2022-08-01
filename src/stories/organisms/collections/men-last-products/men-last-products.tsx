@@ -1,5 +1,7 @@
+import React from "react";
+
 const MenLastProducts = (): JSX.Element => {
-  return <LastProductsCarousel></LastProductsCarousel>;
+  return <div />;
 };
 
 export default MenLastProducts;

@@ -11,19 +11,19 @@ datasource db {
 }
 
 model User {
-  id     Int     @id @default(autoincrement())
-  email  String  @unique
-  name   String
-  orders Order[]
+  id               Int               @id @default(autoincrement())
+  email            String            @unique
+  name             String
+  orders           Order[]
 }
 
 model Order {
-  id            Int               @id @default(autoincrement())
-  author        User              @relation(fields: [authorId], references: [id])
-  authorId      Int
-  products      Product_ordered[]
-  order_created DateTime          @default(now())
-  status        OrderStatus       @default(WAIT)
+  id               Int               @id @default(autoincrement())
+  author           User              @relation(fields: [authorId], references: [id])
+  authorId         Int
+  products         Product[]
+  order_created    DateTime          @default(now())
+  status           OrderStatus       @default(WAIT)
 }
 
 enum OrderStatus {
@@ -32,26 +32,34 @@ enum OrderStatus {
   SEND
 }
 
-model Product_ordered {
-  product   Product @relation(fields: [productId], references: [id])
-  productId Int
-  order     Order   @relation(fields: [orderId], references: [id])
-  orderId   Int
-
-  @@id([productId, orderId])
-}
-
-model Product {
+model ProductExhibition {
   id               Int               @id @default(autoincrement())
   title            String
   description      String
   collection       Collection
   product_created  DateTime          @default(now())
   discount         Boolean           @default(false)
-  discount_procent Int               @default(0)
+  discount_percent Int               @default(0)
+  magazine         Product[]
+}
+
+model Product {
+  id               Int               @id @default(autoincrement())
+  exhibition       ProductExhibition @relation(fields: [exhibitionId], references: [id])
+  exhibitionId     Int
+  size             ProductSize
   price            Float
-  available        Int
-  Product_ordered  Product_ordered[]
+  isAvailable      Boolean           @default(true)
+  order            Order             @relation(fields: [orderId], references: [id])
+  orderId          Int
+}
+
+enum ProductSize {
+  XS
+  S
+  M
+  L
+  XL
 }
 
 enum Collection {
